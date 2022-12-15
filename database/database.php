@@ -43,7 +43,7 @@ class DatabaseHelper
 
     public function getRandomQuotesWithData($n)
     {
-        return $this->executeQuery("SELECT TEXTNOTES.Content, BOOKS.Title, BOOKS.ID, AUTHORS.Name FROM TEXTNOTES JOIN BOOKS ON TEXTNOTES.BookID = BOOKS.ID JOIN AUTHORS ON TEXTNOTES.AuthorID = AUTHORS.ID WHERE Style='4' ORDER BY RAND() LIMIT ".$n);
+        return $this->executeQuery("SELECT TEXTNOTES.Content, BOOKS.Title, BOOKS.ID, AUTHORS.Name FROM TEXTNOTES JOIN BOOKS ON TEXTNOTES.BookID = BOOKS.ID JOIN AUTHORS ON TEXTNOTES.AuthorID = AUTHORS.ID WHERE Style!='0' ORDER BY RAND() LIMIT ".$n);
     }
 
     public function getAuthorFromID($n)
